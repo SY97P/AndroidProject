@@ -1,0 +1,10 @@
+com/example/restapiexample/BuildConfig.java
+ com.example.restapiexample.BuildConfig
+com/example/restapiexample/databinding/ActivitySplashBinding.java
+ com.example.restapiexample.databinding.ActivitySplashBinding
+com/example/restapiexample/databinding/FragmentSearchBinding.java
+ com.example.restapiexample.databinding.FragmentSearchBinding
+com/example/restapiexample/databinding/ActivityMainBinding.java
+ com.example.restapiexample.databinding.ActivityMainBinding
+com/example/restapiexample/databinding/ItemViewBinding.java
+ com.example.restapiexample.databinding.ItemViewBinding
