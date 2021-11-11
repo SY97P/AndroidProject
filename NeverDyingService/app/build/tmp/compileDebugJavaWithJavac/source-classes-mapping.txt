@@ -1,0 +1,2 @@
+com/example/neverdyingservice/BuildConfig.java
+ com.example.neverdyingservice.BuildConfig
