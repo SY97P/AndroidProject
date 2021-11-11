@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "C:\\Users\\telecons\\AndroidStudioProjects\\FlashlightService\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\torch_app_widget.xml",
+        "source": "C:\\Users\\telecons\\AndroidStudioProjects\\FlashlightService\\app\\src\\main\\res\\layout\\torch_app_widget.xml"
+    },
+    {
+        "merged": "C:\\Users\\telecons\\AndroidStudioProjects\\FlashlightService\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_main.xml",
+        "source": "C:\\Users\\telecons\\AndroidStudioProjects\\FlashlightService\\app\\src\\main\\res\\layout\\activity_main.xml"
+    }
+]
