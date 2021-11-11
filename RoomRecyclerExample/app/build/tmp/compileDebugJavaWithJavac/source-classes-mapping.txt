@@ -1,0 +1,12 @@
+com/example/roomrecyclerexample/BuildConfig.java
+ com.example.roomrecyclerexample.BuildConfig
+com/example/roomrecyclerexample/database/dao/CourseDao_Impl.java
+ com.example.roomrecyclerexample.database.dao.CourseDao_Impl
+ com.example.roomrecyclerexample.database.dao.CourseDao_Impl$1
+ com.example.roomrecyclerexample.database.dao.CourseDao_Impl$2
+ com.example.roomrecyclerexample.database.dao.CourseDao_Impl$3
+ com.example.roomrecyclerexample.database.dao.CourseDao_Impl$4
+ com.example.roomrecyclerexample.database.dao.CourseDao_Impl$5
+com/example/roomrecyclerexample/database/CourseDatabase_Impl.java
+ com.example.roomrecyclerexample.database.CourseDatabase_Impl
+ com.example.roomrecyclerexample.database.CourseDatabase_Impl$1
