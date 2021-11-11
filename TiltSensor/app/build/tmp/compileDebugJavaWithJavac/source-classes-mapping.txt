@@ -1,0 +1,2 @@
+com/example/tiltsensor/BuildConfig.java
+ com.example.tiltsensor.BuildConfig
