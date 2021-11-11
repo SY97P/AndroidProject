@@ -1,0 +1,10 @@
+com/example/vaccinationcenter/database/SelectedDatabase_Impl.java
+ com.example.vaccinationcenter.database.SelectedDatabase_Impl
+ com.example.vaccinationcenter.database.SelectedDatabase_Impl$1
+com/example/vaccinationcenter/database/dao/SelectedDao_Impl.java
+ com.example.vaccinationcenter.database.dao.SelectedDao_Impl
+ com.example.vaccinationcenter.database.dao.SelectedDao_Impl$1
+ com.example.vaccinationcenter.database.dao.SelectedDao_Impl$2
+ com.example.vaccinationcenter.database.dao.SelectedDao_Impl$3
+com/example/vaccinationcenter/BuildConfig.java
+ com.example.vaccinationcenter.BuildConfig
