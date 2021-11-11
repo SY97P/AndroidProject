@@ -1,0 +1,2 @@
+com/example/notificationexample/BuildConfig.java
+ com.example.notificationexample.BuildConfig
