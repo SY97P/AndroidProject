@@ -1,0 +1,11 @@
+com/example/roomexample/BuildConfig.java
+ com.example.roomexample.BuildConfig
+com/example/roomexample/dataBase/UserDatabase_Impl.java
+ com.example.roomexample.dataBase.UserDatabase_Impl
+ com.example.roomexample.dataBase.UserDatabase_Impl$1
+com/example/roomexample/dataBase/UserDao_Impl.java
+ com.example.roomexample.dataBase.UserDao_Impl
+ com.example.roomexample.dataBase.UserDao_Impl$1
+ com.example.roomexample.dataBase.UserDao_Impl$2
+ com.example.roomexample.dataBase.UserDao_Impl$3
+ com.example.roomexample.dataBase.UserDao_Impl$4
