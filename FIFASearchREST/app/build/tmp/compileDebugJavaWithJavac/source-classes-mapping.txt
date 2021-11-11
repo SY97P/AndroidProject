@@ -1,0 +1,10 @@
+com/example/fifasearchrest/databinding/ActivityMainBinding.java
+ com.example.fifasearchrest.databinding.ActivityMainBinding
+com/example/fifasearchrest/databinding/ItemListBinding.java
+ com.example.fifasearchrest.databinding.ItemListBinding
+com/example/fifasearchrest/BuildConfig.java
+ com.example.fifasearchrest.BuildConfig
+com/example/fifasearchrest/databinding/FragmentSearchBinding.java
+ com.example.fifasearchrest.databinding.FragmentSearchBinding
+com/example/fifasearchrest/databinding/ActivitySplashBinding.java
+ com.example.fifasearchrest.databinding.ActivitySplashBinding
