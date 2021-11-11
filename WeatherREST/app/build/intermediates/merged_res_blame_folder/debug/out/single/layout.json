@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "C:\\Users\\telecons\\AndroidStudioProjects\\WeatherREST\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\item_list.xml",
+        "source": "C:\\Users\\telecons\\AndroidStudioProjects\\WeatherREST\\app\\src\\main\\res\\layout\\item_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\telecons\\AndroidStudioProjects\\WeatherREST\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_main.xml",
+        "source": "C:\\Users\\telecons\\AndroidStudioProjects\\WeatherREST\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\telecons\\AndroidStudioProjects\\WeatherREST\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_info.xml",
+        "source": "C:\\Users\\telecons\\AndroidStudioProjects\\WeatherREST\\app\\src\\main\\res\\layout\\fragment_info.xml"
+    }
+]

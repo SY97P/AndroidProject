@@ -1,0 +1,8 @@
+com/example/weatherrest/databinding/FragmentInfoBinding.java
+ com.example.weatherrest.databinding.FragmentInfoBinding
+com/example/weatherrest/BuildConfig.java
+ com.example.weatherrest.BuildConfig
+com/example/weatherrest/databinding/ItemListBinding.java
+ com.example.weatherrest.databinding.ItemListBinding
+com/example/weatherrest/databinding/ActivityMainBinding.java
+ com.example.weatherrest.databinding.ActivityMainBinding
