@@ -1,0 +1,6 @@
+com/example/flashlight/BuildConfig.java
+ com.example.flashlight.BuildConfig
+com/example/flashlight/databinding/TorchAppWidgetBinding.java
+ com.example.flashlight.databinding.TorchAppWidgetBinding
+com/example/flashlight/databinding/ActivityMainBinding.java
+ com.example.flashlight.databinding.ActivityMainBinding
