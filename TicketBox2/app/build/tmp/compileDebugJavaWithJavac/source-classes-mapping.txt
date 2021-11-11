@@ -1,0 +1,2 @@
+com/example/ticketbox/BuildConfig.java
+ com.example.ticketbox.BuildConfig
