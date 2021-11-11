@@ -1,0 +1,6 @@
+com/example/addresslatlngconvertor/BuildConfig.java
+ com.example.addresslatlngconvertor.BuildConfig
+com/example/addresslatlngconvertor/databinding/ActivityMapsBinding.java
+ com.example.addresslatlngconvertor.databinding.ActivityMapsBinding
+com/example/addresslatlngconvertor/databinding/ActivityMainBinding.java
+ com.example.addresslatlngconvertor.databinding.ActivityMainBinding
