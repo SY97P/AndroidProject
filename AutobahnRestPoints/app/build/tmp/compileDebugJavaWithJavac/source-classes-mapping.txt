@@ -1,0 +1,8 @@
+com/example/autobahnrestpoints/databinding/ListItemBinding.java
+ com.example.autobahnrestpoints.databinding.ListItemBinding
+com/example/autobahnrestpoints/databinding/ActivitySplashBinding.java
+ com.example.autobahnrestpoints.databinding.ActivitySplashBinding
+com/example/autobahnrestpoints/databinding/ActivityMapsBinding.java
+ com.example.autobahnrestpoints.databinding.ActivityMapsBinding
+com/example/autobahnrestpoints/BuildConfig.java
+ com.example.autobahnrestpoints.BuildConfig

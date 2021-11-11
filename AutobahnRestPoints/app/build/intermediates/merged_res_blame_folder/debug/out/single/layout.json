@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "C:\\Users\\telecons\\AndroidStudioProjects\\AutobahnRestPoints\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_maps.xml",
+        "source": "C:\\Users\\telecons\\AndroidStudioProjects\\AutobahnRestPoints\\app\\src\\main\\res\\layout\\activity_maps.xml"
+    },
+    {
+        "merged": "C:\\Users\\telecons\\AndroidStudioProjects\\AutobahnRestPoints\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\list_item.xml",
+        "source": "C:\\Users\\telecons\\AndroidStudioProjects\\AutobahnRestPoints\\app\\src\\main\\res\\layout\\list_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\telecons\\AndroidStudioProjects\\AutobahnRestPoints\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_splash.xml",
+        "source": "C:\\Users\\telecons\\AndroidStudioProjects\\AutobahnRestPoints\\app\\src\\main\\res\\layout\\activity_splash.xml"
+    }
+]

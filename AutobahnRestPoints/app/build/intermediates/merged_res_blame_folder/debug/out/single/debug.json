@@ -1,0 +1,102 @@
+[
+    {
+        "merged": "C:\\Users\\telecons\\AndroidStudioProjects\\AutobahnRestPoints\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\telecons\\AndroidStudioProjects\\AutobahnRestPoints\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\telecons\\AndroidStudioProjects\\AutobahnRestPoints\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\telecons\\AndroidStudioProjects\\AutobahnRestPoints\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\telecons\\AndroidStudioProjects\\AutobahnRestPoints\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_maps.xml.flat",
+        "source": "C:\\Users\\telecons\\AndroidStudioProjects\\AutobahnRestPoints\\app\\src\\main\\res\\layout\\activity_maps.xml"
+    },
+    {
+        "merged": "C:\\Users\\telecons\\AndroidStudioProjects\\AutobahnRestPoints\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\telecons\\AndroidStudioProjects\\AutobahnRestPoints\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\telecons\\AndroidStudioProjects\\AutobahnRestPoints\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\telecons\\AndroidStudioProjects\\AutobahnRestPoints\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\telecons\\AndroidStudioProjects\\AutobahnRestPoints\\app\\build\\intermediates\\res\\merged\\debug\\drawable_image_rain.xml.flat",
+        "source": "C:\\Users\\telecons\\AndroidStudioProjects\\AutobahnRestPoints\\app\\src\\main\\res\\drawable\\image_rain.xml"
+    },
+    {
+        "merged": "C:\\Users\\telecons\\AndroidStudioProjects\\AutobahnRestPoints\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\telecons\\AndroidStudioProjects\\AutobahnRestPoints\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\telecons\\AndroidStudioProjects\\AutobahnRestPoints\\app\\build\\intermediates\\res\\merged\\debug\\drawable_image_snow.xml.flat",
+        "source": "C:\\Users\\telecons\\AndroidStudioProjects\\AutobahnRestPoints\\app\\src\\main\\res\\drawable\\image_snow.xml"
+    },
+    {
+        "merged": "C:\\Users\\telecons\\AndroidStudioProjects\\AutobahnRestPoints\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\telecons\\AndroidStudioProjects\\AutobahnRestPoints\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\telecons\\AndroidStudioProjects\\AutobahnRestPoints\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\telecons\\AndroidStudioProjects\\AutobahnRestPoints\\app\\src\\main\\res\\drawable-v24\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\telecons\\AndroidStudioProjects\\AutobahnRestPoints\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_splash.xml.flat",
+        "source": "C:\\Users\\telecons\\AndroidStudioProjects\\AutobahnRestPoints\\app\\src\\main\\res\\layout\\activity_splash.xml"
+    },
+    {
+        "merged": "C:\\Users\\telecons\\AndroidStudioProjects\\AutobahnRestPoints\\app\\build\\intermediates\\res\\merged\\debug\\drawable_image_heavy_cloud.xml.flat",
+        "source": "C:\\Users\\telecons\\AndroidStudioProjects\\AutobahnRestPoints\\app\\src\\main\\res\\drawable\\image_heavy_cloud.xml"
+    },
+    {
+        "merged": "C:\\Users\\telecons\\AndroidStudioProjects\\AutobahnRestPoints\\app\\build\\intermediates\\res\\merged\\debug\\drawable_image_sunny.xml.flat",
+        "source": "C:\\Users\\telecons\\AndroidStudioProjects\\AutobahnRestPoints\\app\\src\\main\\res\\drawable\\image_sunny.xml"
+    },
+    {
+        "merged": "C:\\Users\\telecons\\AndroidStudioProjects\\AutobahnRestPoints\\app\\build\\intermediates\\res\\merged\\debug\\drawable_image_wind.xml.flat",
+        "source": "C:\\Users\\telecons\\AndroidStudioProjects\\AutobahnRestPoints\\app\\src\\main\\res\\drawable\\image_wind.xml"
+    },
+    {
+        "merged": "C:\\Users\\telecons\\AndroidStudioProjects\\AutobahnRestPoints\\app\\build\\intermediates\\res\\merged\\debug\\drawable_image_cloud.xml.flat",
+        "source": "C:\\Users\\telecons\\AndroidStudioProjects\\AutobahnRestPoints\\app\\src\\main\\res\\drawable\\image_cloud.xml"
+    },
+    {
+        "merged": "C:\\Users\\telecons\\AndroidStudioProjects\\AutobahnRestPoints\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_map_24.xml.flat",
+        "source": "C:\\Users\\telecons\\AndroidStudioProjects\\AutobahnRestPoints\\app\\src\\main\\res\\drawable\\ic_baseline_map_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\telecons\\AndroidStudioProjects\\AutobahnRestPoints\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\telecons\\AndroidStudioProjects\\AutobahnRestPoints\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\telecons\\AndroidStudioProjects\\AutobahnRestPoints\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\telecons\\AndroidStudioProjects\\AutobahnRestPoints\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\telecons\\AndroidStudioProjects\\AutobahnRestPoints\\app\\build\\intermediates\\res\\merged\\debug\\layout_list_item.xml.flat",
+        "source": "C:\\Users\\telecons\\AndroidStudioProjects\\AutobahnRestPoints\\app\\src\\main\\res\\layout\\list_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\telecons\\AndroidStudioProjects\\AutobahnRestPoints\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\telecons\\AndroidStudioProjects\\AutobahnRestPoints\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\telecons\\AndroidStudioProjects\\AutobahnRestPoints\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\telecons\\AndroidStudioProjects\\AutobahnRestPoints\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\telecons\\AndroidStudioProjects\\AutobahnRestPoints\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\telecons\\AndroidStudioProjects\\AutobahnRestPoints\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\telecons\\AndroidStudioProjects\\AutobahnRestPoints\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\telecons\\AndroidStudioProjects\\AutobahnRestPoints\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\telecons\\AndroidStudioProjects\\AutobahnRestPoints\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\telecons\\AndroidStudioProjects\\AutobahnRestPoints\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\telecons\\AndroidStudioProjects\\AutobahnRestPoints\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_grain_24.xml.flat",
+        "source": "C:\\Users\\telecons\\AndroidStudioProjects\\AutobahnRestPoints\\app\\src\\main\\res\\drawable\\ic_baseline_grain_24.xml"
+    }
+]
