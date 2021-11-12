@@ -44,7 +44,6 @@ android {
 
 dependencies {
 
-
     implementation "io.realm:android-adapters:2.1.1"
     implementation "org.jetbrains.anko:anko:0.10.5"
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
