@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".RandomFragment">
+
+    <LinearLayout
+        android:id="@+id/random_addr_frame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="random_latlng_frame"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/random_addr_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="주소를 입력하세요."
+            android:layout_gravity="center"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/random_addr_input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Address input here"/>
+
+        <Button
+            android:id="@+id/random_addr_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="위경도값으로 변환"/>
+
+        <TextView
+            android:id="@+id/random_addr_lat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lat : "
+            android:textSize="15sp"
+            android:layout_gravity="center"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/random_addr_lng"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lng : "
+            android:textSize="15sp"
+            android:layout_gravity="center"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/random_map_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TO MAP"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <LinearLayout
+        android:id="@+id/random_latlng_frame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="random_addr_frame"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/random_latlng_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="무작위 위경도값을 받으세요."
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+        <Button
+            android:id="@+id/random_latlng_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RANDOM"
+            android:layout_gravity="center_horizontal"/>
+
+        <TextView
+            android:id="@+id/random_latlng_lat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lat : "
+            android:textSize="15sp"
+            android:layout_gravity="center"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/random_latlng_lng"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lng : "
+            android:textSize="15sp"
+            android:layout_gravity="center"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
