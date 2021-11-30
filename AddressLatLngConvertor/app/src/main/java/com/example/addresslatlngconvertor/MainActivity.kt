@@ -47,8 +47,14 @@ class MainActivity : AppCompatActivity() {
                 if (addressTextInput == null) {
                     Toast.makeText(this, "찾고자 하는 장소를 입력해주세요.", Toast.LENGTH_LONG).show()
                 } else {
-                    val cor = geocoder.getFromLocationName(addressTextInput.text.toString(), 1)
-                    Toast.makeText(this, "좌표 : ${cor[0].latitude}, ${cor[0].longitude}", Toast.LENGTH_LONG).show()
+                    try {
+                        val cor = geocoder.getFromLocationName(addressTextInput.text.toString(), 1)
+                        Toast.makeText(this,
+                            "좌표 : ${cor[0].latitude}, ${cor[0].longitude}",
+                            Toast.LENGTH_LONG).show()
+                    } catch (e : Exception) {
+                        Toast.makeText(this, "주소를 입력하세요.", Toast.LENGTH_LONG).show()
+                    }
                 }
             }
         }

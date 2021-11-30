@@ -1,27 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\telecons\\AndroidStudioProjects\\AddressLatLngConvertor\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-night-v8\\values-night-v8.xml",
+            "outputFile": "D:\\AndroidProject\\AddressLatLngConvertor\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-night-v8\\values-night-v8.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\telecons\\.gradle\\caches\\transforms-2\\files-2.1\\9d7764475f0d1d3d52b55c8b7c9e0171\\appcompat-1.3.1\\res\\values-night-v8\\values-night-v8.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,125,209,293,389,491,593,687",
-                        "endColumns": "69,83,83,95,101,101,93,88",
-                        "endOffsets": "120,204,288,384,486,588,682,771"
-                    },
-                    "to": {
-                        "startLines": "15,16,17,18,19,20,21,38",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "834,904,988,1072,1168,1270,1372,3328",
-                        "endColumns": "69,83,83,95,101,101,93,88",
-                        "endOffsets": "899,983,1067,1163,1265,1367,1461,3412"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\telecons\\AndroidStudioProjects\\AddressLatLngConvertor\\app\\src\\main\\res\\values-night\\themes.xml",
+                    "source": "D:\\AndroidProject\\AddressLatLngConvertor\\app\\src\\main\\res\\values-night\\themes.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -37,6 +20,23 @@
                         "endLines": "14",
                         "endColumns": "12",
                         "endOffsets": "829"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\telecons\\.gradle\\caches\\transforms-2\\files-2.1\\9d7764475f0d1d3d52b55c8b7c9e0171\\appcompat-1.3.1\\res\\values-night-v8\\values-night-v8.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,125,209,293,389,491,593,687",
+                        "endColumns": "69,83,83,95,101,101,93,88",
+                        "endOffsets": "120,204,288,384,486,588,682,771"
+                    },
+                    "to": {
+                        "startLines": "15,16,17,18,19,20,21,38",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "834,904,988,1072,1168,1270,1372,3328",
+                        "endColumns": "69,83,83,95,101,101,93,88",
+                        "endOffsets": "899,983,1067,1163,1265,1367,1461,3412"
                     }
                 },
                 {
