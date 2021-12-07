@@ -26,7 +26,16 @@ public abstract class ActivityMainBinding extends ViewDataBinding {
   public final Button ToLatButton;
 
   @NonNull
+  public final TextView countText;
+
+  @NonNull
+  public final TextView fullAddress;
+
+  @NonNull
   public final EditText inputAddr;
+
+  @NonNull
+  public final TextView latText;
 
   @NonNull
   public final LinearLayout linear1;
@@ -35,20 +44,28 @@ public abstract class ActivityMainBinding extends ViewDataBinding {
   public final LinearLayout linear2;
 
   @NonNull
+  public final TextView lngText;
+
+  @NonNull
   public final TextView outputAddr;
 
   @Bindable
   protected MainActivity mActivity;
 
   protected ActivityMainBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      Button ToAddrButton, Button ToLatButton, EditText inputAddr, LinearLayout linear1,
-      LinearLayout linear2, TextView outputAddr) {
+      Button ToAddrButton, Button ToLatButton, TextView countText, TextView fullAddress,
+      EditText inputAddr, TextView latText, LinearLayout linear1, LinearLayout linear2,
+      TextView lngText, TextView outputAddr) {
     super(_bindingComponent, _root, _localFieldCount);
     this.ToAddrButton = ToAddrButton;
     this.ToLatButton = ToLatButton;
+    this.countText = countText;
+    this.fullAddress = fullAddress;
     this.inputAddr = inputAddr;
+    this.latText = latText;
     this.linear1 = linear1;
     this.linear2 = linear2;
+    this.lngText = lngText;
     this.outputAddr = outputAddr;
   }
 

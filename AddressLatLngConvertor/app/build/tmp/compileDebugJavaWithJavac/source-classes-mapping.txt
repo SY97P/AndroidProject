@@ -1,23 +1,22 @@
 com/example/addresslatlngconvertor/DataBindingTriggerClass.java
  com.example.addresslatlngconvertor.DataBindingTriggerClass
-com/example/addresslatlngconvertor/databinding/ActivityMainBindingImpl.java
- com.example.addresslatlngconvertor.databinding.ActivityMainBindingImpl
- com.example.addresslatlngconvertor.databinding.ActivityMainBindingImpl$OnClickListenerImpl
+androidx/databinding/DataBindingComponent.java
+ androidx.databinding.DataBindingComponent
 com/example/addresslatlngconvertor/BuildConfig.java
  com.example.addresslatlngconvertor.BuildConfig
 androidx/databinding/DataBinderMapperImpl.java
  androidx.databinding.DataBinderMapperImpl
 com/example/addresslatlngconvertor/BR.java
  com.example.addresslatlngconvertor.BR
-com/example/addresslatlngconvertor/databinding/ActivityMapsBinding.java
- com.example.addresslatlngconvertor.databinding.ActivityMapsBinding
 androidx/databinding/library/baseAdapters/BR.java
  androidx.databinding.library.baseAdapters.BR
-androidx/databinding/DataBindingComponent.java
- androidx.databinding.DataBindingComponent
 com/example/addresslatlngconvertor/DataBinderMapperImpl.java
  com.example.addresslatlngconvertor.DataBinderMapperImpl
  com.example.addresslatlngconvertor.DataBinderMapperImpl$InnerBrLookup
  com.example.addresslatlngconvertor.DataBinderMapperImpl$InnerLayoutIdLookup
+com/example/addresslatlngconvertor/databinding/ActivityMapsBinding.java
+ com.example.addresslatlngconvertor.databinding.ActivityMapsBinding
+com/example/addresslatlngconvertor/databinding/ActivityMainBindingImpl.java
+ com.example.addresslatlngconvertor.databinding.ActivityMainBindingImpl
 com/example/addresslatlngconvertor/databinding/ActivityMainBinding.java
  com.example.addresslatlngconvertor.databinding.ActivityMainBinding
