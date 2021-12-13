@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".LoadingActivity">
+    <data>
+        <variable
+            name="loading"
+            type="com.example.criminalcctv.LoadingActivity" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/level_1">
+
+        <TextView
+            android:id="@+id/activity_loading_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Criminal CCTV MAP"
+            android:layout_marginTop="150dp"
+            android:textColor="@color/level_4"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/activity_loading_check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Check Information for your Query"
+            android:layout_marginTop="30dp"
+            android:textColor="@color/level_3"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center_horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp">
+                <TextView
+                    android:id="@+id/activity_loading_crimeType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Crime             :"
+                    android:textColor="@color/level_3"
+                    android:textStyle="italic"
+                    android:textSize="20sp"
+                    android:layout_gravity="right"
+                    android:gravity="center_horizontal"/>
+                <TextView
+                    android:id="@+id/activity_loading_crimeTypeAnswer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@color/level_3"
+                    android:textStyle="italic"
+                    android:textSize="20sp"
+                    android:layout_gravity="center_horizontal"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/activity_loading_year"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Year              :             2010"
+                android:textColor="@color/level_3"
+                android:textStyle="italic"
+                android:textSize="20sp"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"/>
+            <TextView
+                android:id="@+id/activity_loading_crimePrefer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Crime DATA  :          검찰청"
+                android:textColor="@color/level_3"
+                android:textStyle="italic"
+                android:textSize="20sp"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"/>
+            <TextView
+                android:id="@+id/activity_loading_cctvPrefer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CCTV DATA  :   행정안전부"
+                android:textColor="@color/level_3"
+                android:textStyle="italic"
+                android:textSize="20sp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"/>
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/activity_loading_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:visibility="gone"
+            android:layout_gravity="center_horizontal"
+            android:indeterminateTint="@color/level_3"/>
+        <TextView
+            android:id="@+id/activity_loading_isLoading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Now Loading..."
+            android:textColor="@color/level_3"
+            android:layout_gravity="center_horizontal"/>
+    </LinearLayout>
+
+</layout>
