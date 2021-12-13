@@ -3,6 +3,7 @@ package com.example.criminalcctv
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -36,6 +37,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
+        // 리스트 표시
         mAdapter = CrimeTypeAdapter()
         for (i in 0 until crime.size) {
             crimeList.add(CrimeTypeData(crime[i], "아무거나", 0))
@@ -45,7 +47,7 @@ class MainActivity : AppCompatActivity() {
         binding.activityMainList.layoutManager = LinearLayoutManager(this)
         binding.activityMainList.adapter = mAdapter
 
-
+        //
         val intent = Intent(this, LoadingActivity::class.java)
         CoroutineScope(Dispatchers.Main).launch {
             withContext(CoroutineScope(Dispatchers.Default).coroutineContext) {
@@ -55,10 +57,10 @@ class MainActivity : AppCompatActivity() {
             mAdapter.setItemClickListener(object : CrimeTypeAdapter.OnItemClickListener {
                 override fun onClick(view: View, position: Int) {
                     clickedPosition = position
-                    intent.putExtra("crimeType", crime[clickedPosition])
                     intent.putExtra("crimeTypeIndex", clickedPosition)
+                    intent.putExtra("crimeType", crime[clickedPosition])
                     if (cityNameList != null) {
-                        intent.putExtra("cityNameList", cityNameList)
+//                        Log.d("PSY", "cityNameList : $cityNameList")
                         startActivity(intent)
                     }
                 }

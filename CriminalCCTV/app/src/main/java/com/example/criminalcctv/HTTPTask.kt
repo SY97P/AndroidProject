@@ -44,7 +44,7 @@ object HTTPTask {
         val cityNameRes : String = getJsonArray(RES.CRIME_REQ)!!.get(0).toString()
         val temp = cityNameRes.split(",")
         for (i in 1 until temp.size) {
-            cityNameList.add(temp[i].split(": ").get(0).replace("\"", ""))
+            cityNameList.add(temp[i].split(":").get(0).replace("\"", ""))
         }
         return cityNameList
     }
@@ -53,9 +53,9 @@ object HTTPTask {
         val cityCrimeCountList : ArrayList<CrimeTypeData> = arrayListOf()
         val cityCrimeRes : String = getJsonArray(RES.CRIME_REQ)!!.get(index).toString()
         val temp = cityCrimeRes.split(",")
-        val crime = temp[0].split(": ").get(0).split(":").get(1).replace("\"", "").trim()
+        val crime = temp[0].split(":").get(1).replace("\"", "").replace("}", "").trim()
         for (i in 1 until temp.size) {
-            val info = temp[i].split(": ")
+            val info = temp[i].split(":")
             try {
                 cityCrimeCountList.add(CrimeTypeData(crime, info.get(0).replace("\"", ""),
                     info.get(1).replace("\"", "").toInt()))

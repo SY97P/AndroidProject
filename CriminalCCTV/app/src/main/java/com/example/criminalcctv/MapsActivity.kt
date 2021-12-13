@@ -1,8 +1,11 @@
 package com.example.criminalcctv
 
+import android.graphics.drawable.BitmapDrawable
 import android.location.Geocoder
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import androidx.core.graphics.drawable.toBitmap
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -11,6 +14,8 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.example.criminalcctv.databinding.ActivityMapsBinding
+import com.google.android.gms.maps.model.BitmapDescriptor
+import com.google.android.gms.maps.model.BitmapDescriptorFactory
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
@@ -19,7 +24,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var geocoder: Geocoder
 
-    private lateinit var cityData : ArrayList<CrimeTypeData>
+    private lateinit var crimeData : ArrayList<CrimeTypeData>
     private lateinit var latlngList : ArrayList<LatLng>
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,13 +35,41 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
         geocoder = Geocoder(this)
 
-        cityData = intent.getParcelableArrayListExtra<CrimeTypeData>("cityData") as ArrayList<CrimeTypeData>
-        latlngList = intent.getParcelableArrayListExtra<LatLng>()
+        // load intent lists
+        crimeData = composeCrimeData()
+        latlngList = convertToLatLng()
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         val mapFragment = supportFragmentManager
             .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
+    }
+
+    private fun convertToLatLng(): ArrayList<LatLng> {
+        var result : ArrayList<LatLng> = arrayListOf()
+        var list = intent.getStringArrayListExtra("latlngList")
+        Log.d("PSY", "size : ${list!!.size}")
+        for (i in 0 until list!!.size) {
+            val temp = list!![i].replace("lat/lng: ", "").replace(")", "").replace("(", "").split(",")
+            Log.d("PSY", "temp : $temp")
+            //Log.d("PSY", "temp[0] : ${temp[0]}, temp[1] : ${temp[1]}")
+            result.add(LatLng(temp[0].toDouble(), temp[1].toDouble()))
+        }
+        return result
+    }
+
+    private fun composeCrimeData(): ArrayList<CrimeTypeData> {
+        var result : ArrayList<CrimeTypeData> = arrayListOf()
+        Log.d("PSY", "loadingCrimeList : ${intent.getStringArrayListExtra("loadingCrimeList")}")
+        var size = intent.getStringArrayListExtra("loadingCrimeList")!!.size
+        for (i in 0 until size) {
+            result.add(CrimeTypeData(
+                intent.getStringArrayListExtra("loadingCrimeList")!!.get(i).toString(),
+                intent.getStringArrayListExtra("loadingCityList")!!.get(i).toString(),
+                intent.getStringArrayListExtra("loadingCountList")!!.get(i).toInt()
+            ))
+        }
+        return result
     }
 
     /**
@@ -57,13 +90,15 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mMap.addMarker(MarkerOptions().position(seoul)
             .title("서울시")
         )
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(seoul))
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(seoul, 10f))
 
-        for (i in 0 until cityData.size) {
+
+        for (i in 0 until crimeData.size) {
             mMap.addMarker(MarkerOptions()
                 .position(latlngList[i])
-                .title(cityData[i].city)
-                .snippet(cityData[i].count.toString())
+                .title(crimeData[i].city)
+                .snippet(crimeData[i].count.toString())
+                //.icon(BitmapDescriptorFactory.fromBitmap(ic_others.toBitmap()))
             )
         }
     }
