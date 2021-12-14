@@ -1,6 +1,8 @@
 package com.example.criminalcctv
 
+import android.graphics.Bitmap
 import android.graphics.drawable.BitmapDrawable
+import android.graphics.drawable.Drawable
 import android.location.Geocoder
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -11,13 +13,10 @@ import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
-import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.MarkerOptions
 import com.example.criminalcctv.databinding.ActivityMapsBinding
-import com.google.android.gms.maps.model.BitmapDescriptor
-import com.google.android.gms.maps.model.BitmapDescriptorFactory
+import com.google.android.gms.maps.model.*
 
-class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
+class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
 
     private lateinit var mMap: GoogleMap
     private lateinit var binding: ActivityMapsBinding
@@ -26,6 +25,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var crimeData : ArrayList<CrimeTypeData>
     private lateinit var latlngList : ArrayList<LatLng>
+
+    private var clickedPosition : LatLng? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -87,19 +88,62 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         // Add a marker in Sydney and move the camera
         val seoulAddress = geocoder.getFromLocationName("서울", 10).get(0)
         val seoul = LatLng(seoulAddress.latitude, seoulAddress.longitude)
-        mMap.addMarker(MarkerOptions().position(seoul)
-            .title("서울시")
-        )
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(seoul, 10f))
-
 
         for (i in 0 until crimeData.size) {
             mMap.addMarker(MarkerOptions()
                 .position(latlngList[i])
                 .title(crimeData[i].city)
-                .snippet(crimeData[i].count.toString())
-                //.icon(BitmapDescriptorFactory.fromBitmap(ic_others.toBitmap()))
+                .snippet("[${crimeData[i].crime}] 발생횟수 : ${crimeData[i].count.toString()}")
+                .icon(
+                    when {
+                        crimeData[i].count > isDanger() -> {
+                            BitmapDescriptorFactory.fromResource(R.drawable.ic_danger)
+                        }
+                        crimeData[i].count < isSafe() -> {
+                            BitmapDescriptorFactory.fromResource(R.drawable.ic_safe)
+                        }
+                        else -> {
+                            BitmapDescriptorFactory.fromResource(R.drawable.ic_dot)
+                        }
+                    }
+                )
             )
         }
+
+        mMap.setOnMarkerClickListener (object : GoogleMap.OnMarkerClickListener {
+            override fun onMarkerClick(marker : Marker): Boolean {
+                if (clickedPosition == null) {
+                    clickedPosition = marker.position
+                } else {
+                    if (clickedPosition!!.equals(marker.position)) {
+                        // 다른 마커 지우고 지역 CCTV 마커 생성
+                        mMap
+                    }
+                }
+                return true
+            }
+        })
+    }
+
+    private fun isDanger() : Int {
+        var countList : ArrayList<Int> = arrayListOf()
+        for (i in 0 until crimeData.size) {
+            countList.add(crimeData[i].count)
+        }
+        countList.sortByDescending { it }
+        if (countList[4] * 2 < countList[3]) {
+            return countList[3]
+        }
+        return countList[4]
+    }
+
+    private fun isSafe() : Int {
+        var sum = 0
+        for (i in 0 until crimeData.size){
+            sum += crimeData[i].count
+        }
+        sum /= crimeData.size
+        return (sum*0.25).toInt()
     }
 }
