@@ -61,7 +61,7 @@ class LoadingActivity : AppCompatActivity() {
                     val latlngList : ArrayList<String> = arrayListOf()
                     for (i in 0 until cityData!!.size) {
                         runOnUiThread {
-                            Log.d("PSY", "current : ${String.format("%.2f", (i * 100 / 120).toDouble())}%")
+                            Log.d("PSY", "Map loading : ${String.format("%.2f", (i * 100 / 120).toDouble())}%")
                             binding.activityLoadingPortion.text = String.format("%.2f", (i * 100 / 120).toDouble()) + "%"
                             if (binding.activityLoadingPortion.text.equals("100.00%")) {
                                 binding.activityLoadingPortion.text = "Loading is Done!"
