@@ -1,6 +1,7 @@
 package com.example.criminalcctv
 
 import android.content.Intent
+import android.content.res.AssetManager
 import android.location.Address
 import android.location.Geocoder
 import androidx.appcompat.app.AppCompatActivity
@@ -24,6 +25,8 @@ class LoadingActivity : AppCompatActivity() {
 
     private lateinit var geocoder : Geocoder
 
+    private lateinit var assetManager : AssetManager
+
     private var cityData : ArrayList<CrimeTypeData>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,6 +34,8 @@ class LoadingActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_loading)
 
         geocoder = Geocoder(this)
+
+        assetManager = resources.assets
 
         binding.activityLoadingCrimeTypeAnswer.text = intent.getStringExtra("crimeType")
 
@@ -46,7 +51,7 @@ class LoadingActivity : AppCompatActivity() {
         CoroutineScope(Dispatchers.Main).launch {
             withContext(CoroutineScope(Dispatchers.Default).coroutineContext) {
                 cityData = HTTPTask.getCityCrimeCount(intent.getIntExtra("crimeTypeIndex", 0))
-                Log.d("PSY", "cityData : $cityData")
+//                Log.d("PSY", "cityData : $cityData")
                 if (cityData != null) {
                     // cityData -> crimeList + cityList + countList
                     var loadingCrimeList: ArrayList<String> = parseData(cityData!!, "crime")
@@ -61,8 +66,8 @@ class LoadingActivity : AppCompatActivity() {
                     val latlngList : ArrayList<String> = arrayListOf()
                     for (i in 0 until cityData!!.size) {
                         runOnUiThread {
-                            Log.d("PSY", "Map loading : ${String.format("%.2f", (i * 100 / 120).toDouble())}%")
-                            binding.activityLoadingPortion.text = String.format("%.2f", (i * 100 / 120).toDouble()) + "%"
+                            Log.d("PSY", "Map loading : ${String.format("%.2f", (i * 100 / cityData!!.size).toDouble())}%")
+                            binding.activityLoadingPortion.text = String.format("%.2f", (i * 100 / cityData!!.size).toDouble()) + "%"
                             if (binding.activityLoadingPortion.text.equals("100.00%")) {
                                 binding.activityLoadingPortion.text = "Loading is Done!"
                             }
@@ -72,7 +77,7 @@ class LoadingActivity : AppCompatActivity() {
                             var address = geocoder.getFromLocationName(cityData!![i].city, 10)[0]
                             //Log.d("PSY", "i : $i, cityName : ${cityData!![i].city}, address : $address")
                             if (cityData!![i].city.equals("도시이외")) {
-                                address = geocoder.getFromLocationName("철원", 10)[0]
+                                address = geocoder.getFromLocationName("광명", 10)[0]
                             }
                             latlng = LatLng(address!!.latitude, address!!.longitude)
                         } catch (e :Exception) {
@@ -114,6 +119,7 @@ class LoadingActivity : AppCompatActivity() {
 
     private fun parseData(cityData: ArrayList<CrimeTypeData>, s: String): ArrayList<String> {
         var result = arrayListOf<String>()
+//        Log.d("PSY", "cityData size : ${cityData.size}")
         for (i in 0 until cityData.size) {
             when (s) {
                 "crime" -> {

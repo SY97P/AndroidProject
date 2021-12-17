@@ -1,5 +1,6 @@
 package com.example.criminalcctv
 
+import android.content.res.AssetManager
 import android.graphics.Bitmap
 import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
@@ -9,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.core.graphics.alpha
 import androidx.core.graphics.drawable.toBitmap
 
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -21,6 +23,8 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import java.lang.Exception
+import kotlin.concurrent.thread
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnInfoWindowClickListener, GoogleMap.OnMarkerClickListener {
 
@@ -37,6 +41,35 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnInfoWi
     private var locationMarker : ArrayList<Marker?> = arrayListOf()
     private var cctvMarker : ArrayList<Marker?> = arrayListOf()
 
+    lateinit var assetMananger : AssetManager
+
+    private var jsonIndexing = mapOf<String, String>(
+        "강남구청" to "gangnam",
+        "강북경찰서" to "ganbukPolice",
+        "강북구청" to "ganbuk",
+        "강서구" to "ganseo",
+        "관악구청" to "gwanak",
+        "광진구청" to "gwanjin",
+        "구로구청" to "guro",
+        "금천구청" to "guemcheon",
+        "노원구청" to "nowon",
+        "동대문구청" to "dongdaemun",
+        "동작구청" to "dongjak",
+        "마포구청" to "mapo",
+        "서대문구청" to "seodaemun",
+        "서초구청" to "seocho",
+        "성동구청" to "seondong",
+        "성북구청" to "seongbuk",
+        "송파구청" to "songpa",
+        "양천구청" to "yangcheon",
+        "영등포구청" to "yeongduengpo",
+        "용산구청" to "yongsan",
+        "은평구청" to "eunpyeong",
+        "종로구청" to "jongro",
+        "중구청" to "junggu",
+        "중랑구청" to "jungrang"
+    )
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -44,6 +77,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnInfoWi
         setContentView(binding.root)
 
         geocoder = Geocoder(this)
+
+        assetMananger = this.resources.assets
+
+        this.supportActionBar!!.setTitle("서울특별시")
 
         // load intent lists
         crimeData = composeCrimeData()
@@ -58,11 +95,11 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnInfoWi
     private fun convertToLatLng(): ArrayList<LatLng> {
         var result : ArrayList<LatLng> = arrayListOf()
         var list = intent.getStringArrayListExtra("latlngList")
-        Log.d("PSY", "size : ${list!!.size}")
+//        Log.d("PSY", "size : ${list!!.size}")
         for (i in 0 until list!!.size) {
             val temp = list!![i].replace("lat/lng: ", "").replace(")", "").replace("(", "").split(",")
-            Log.d("PSY", "temp : $temp")
-            //Log.d("PSY", "temp[0] : ${temp[0]}, temp[1] : ${temp[1]}")
+            // Log.d("PSY", "temp : $temp")
+            // Log.d("PSY", "temp[0] : ${temp[0]}, temp[1] : ${temp[1]}")
             result.add(LatLng(temp[0].toDouble(), temp[1].toDouble()))
         }
         return result
@@ -70,7 +107,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnInfoWi
 
     private fun composeCrimeData(): ArrayList<CrimeTypeData> {
         var result : ArrayList<CrimeTypeData> = arrayListOf()
-        Log.d("PSY", "loadingCrimeList : ${intent.getStringArrayListExtra("loadingCrimeList")}")
+//        Log.d("PSY", "loadingCrimeList : ${intent.getStringArrayListExtra("loadingCrimeList")}")
         var size = intent.getStringArrayListExtra("loadingCrimeList")!!.size
         for (i in 0 until size) {
             result.add(CrimeTypeData(
@@ -94,10 +131,26 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnInfoWi
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
 
+//        val backgroundPolygon : Polygon = mMap.addPolygon(
+//            PolygonOptions()
+//                .clickable(false)
+//                .add(
+//                    LatLng(-90.0,-90.0),
+//                    LatLng(-90.0, 90.0),
+//                    LatLng(90.0, 90.0),
+//                    LatLng(90.0, -90.0)
+//                )
+//        )
+//        backgroundPolygon.apply {
+//            tag = "BackgroundPolygon"
+//            fillColor = R.color.level_2
+//        }
+
         // Add a marker in Sydney and move the camera
         val seoulAddress = geocoder.getFromLocationName("서울", 10).get(0)
         val seoul = LatLng(seoulAddress.latitude, seoulAddress.longitude)
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(seoul, 10f))
+        mMap.setMinZoomPreference(10f)
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(seoul, 11f))
 
         for (i in 0 until crimeData.size) {
             locationMarker.add(
@@ -168,44 +221,54 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnInfoWi
             }
             cctvMarker.clear()
         }
-        // 이제 맵에 cctvMarker는 없음. 새로 찾아서 그려야 함.
         Toast.makeText(this, "CCTV 데이터를 불러올 때까지 잠시만 기다려주세요.", Toast.LENGTH_LONG).show()
         val markerAddr : Address = geocoder.getFromLocationName(marker.title, 10)[0]
-        // markerAddr : Address[addressLines=[0:"대한민국 서울특별시 강남구"],feature=강남구,admin=서울특별시,
-        // sub-admin=null,locality=null,thoroughfare=null,postalCode=null,countryCode=KR,countryName=대한민국,
-        // hasLatitude=true,latitude=37.5172363,hasLongitude=true,longitude=127.0473248,phone=null,url=null,extras=null]
         Log.d("PSY", "markerAddr : $markerAddr")
+        Log.d("PSY", "markerAddr's feature : ${markerAddr.featureName}")
 
         try {
-            // lv1List : (seoul, jeju, gangwon, ...) 중 한 리스트
-            // lv2List : (seoul 중 원하는 결과를 줄 수 있는 리스트)
-            var lv1List : ArrayList<String>? = DEFINES.classificate1(markerAddr.adminArea) // adminArea : 서울특별시
-            var lv2List : ArrayList<String> = DEFINES.classificate2(markerAddr.featureName, lv1List!!) // feature : 강남구
+            val jsonKeyWord: String? =
+                getJsonKeyWord(markerAddr.featureName) ?: jsonIndexing.get("종로구청")
+            Log.d("PSY", "jsonKeyword : $jsonKeyWord")
+            val cctvDataList: ArrayList<CCTVData> =
+                HTTPTask.getCCTVdata(assetMananger, jsonKeyWord!!)
+            Log.d("PSY", "cctvDataList size : ${cctvDataList.size}")
+            for (i in 0 until cctvDataList.size) {
+                Log.d("PSY", "cctvData loading : $i / ${cctvDataList.size}")
+                cctvMarker.add(
+                    mMap.addMarker(
+                        MarkerOptions()
+                            .position(cctvDataList[i].position)
+                            .title(cctvDataList[i].location)
+                            .snippet(cctvDataList[i].info)
+                            .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_secondary_cctv))
+                    )
+                )
+            }
+        } catch (e : Exception) {
+            e.printStackTrace()
+        }
+    }
 
-            CoroutineScope(Dispatchers.Main).launch {
-                withContext(CoroutineScope(Dispatchers.Default).coroutineContext) {
-                    var cctvList : ArrayList<CCTVData> = HTTPTask.getCCTVdata(lv2List)
-
-                    for (i in 0 until cctvList.size) {
-                        Log.d("PSY", "cctv loading : $i / ${cctvList.size}")
-                        runOnUiThread {
-                            cctvMarker.add(
-                                mMap.addMarker(
-                                    MarkerOptions()
-                                        .position(cctvList[i].position)
-                                        .title(cctvList[i].location)
-                                        .snippet(cctvList[i].info)
-                                        .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_cctv))
-                                )
-                            )
-                            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(LatLng(markerAddr.latitude, markerAddr.longitude), 13f))
-                        }
-                    }
+    /**
+     * getJsonKeyWord(String?)
+     *
+     * 현재 마커 featureName을 이용하여 jsonobject 검색을 위한 키워드 String 반환.
+     *
+     * feature : "동작구"
+     * jsonIndex : mapOf("동작구청" to "dongjak")
+     */
+    fun getJsonKeyWord(feature: String?): String? {
+        try {
+            for (i in jsonIndexing.keys) {
+                if (i.contains(feature.toString()) || feature!!.contains(i) || feature.equals(i)) {
+                    return jsonIndexing.get(i).toString()
                 }
             }
         } catch (e : Exception) {
             e.printStackTrace()
         }
+        return null
     }
 
     /**
@@ -222,6 +285,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnInfoWi
         if (clickedPosition == null || clickedPosition != marker.position) {
             clickedPosition = marker.position
         }
+        this.supportActionBar!!.setTitle(marker.title)
         return true
     }
 }
