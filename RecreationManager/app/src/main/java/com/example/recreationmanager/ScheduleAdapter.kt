@@ -18,7 +18,6 @@ class ScheduleAdapter : RecyclerView.Adapter<ScheduleAdapter.ViewHolder>() {
     inner class ViewHolder(val binding : ItemScheduleListBinding) : RecyclerView.ViewHolder(binding.root) {
         fun onBind(newData : ScheduleData) {
             binding.itemScheduleList = newData
-            notifyDataSetChanged()
         }
     }
 

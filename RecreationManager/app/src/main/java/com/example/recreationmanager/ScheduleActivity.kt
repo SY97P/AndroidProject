@@ -1,5 +1,6 @@
 package com.example.recreationmanager
 
+import android.content.Intent
 import android.location.Geocoder
 import android.os.Bundle
 import android.util.Log
@@ -34,31 +35,30 @@ class ScheduleActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
         try {
             val date : String? = intent.getStringExtra("date")
-            val title : String = date!!.substring(10)
+            val title : String = date!!.substring(0, 11)
             Log.d("PSY", "title : $title")
-            supportActionBar!!.setDisplayShowTitleEnabled(false)
-            supportActionBar!!.setTitle(title)
+            supportActionBar!!.setDisplayShowTitleEnabled(true)
+            supportActionBar!!.setTitle(title.toString())
         } catch (e : Exception) {
             e.printStackTrace()
         }
 
         // list inflate
-        CoroutineScope(Dispatchers.Main).launch {
-            mAdapter = ScheduleAdapter()
-            binding.scheduleList.layoutManager = LinearLayoutManager(applicationContext)
-            binding.scheduleList.adapter = mAdapter
-            withContext(CoroutineScope(Dispatchers.Default).coroutineContext) {
-                mAdapter.setData(scheduleList.toList())
-            }
-        }
+        mAdapter = ScheduleAdapter()
+        binding.scheduleList.layoutManager = LinearLayoutManager(applicationContext)
+        binding.scheduleList.adapter = mAdapter
+        mAdapter.setData(scheduleList.toList())
     }
 
     override fun onStart() {
         super.onStart()
 
         binding.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
+//            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                .setAction("Action", null).show()
+            val intent = Intent(this, AddScheduleActivity::class.java)
+            intent.putExtra("date", intent.getStringExtra("date"))
+            startActivity(intent)
         }
     }
 
