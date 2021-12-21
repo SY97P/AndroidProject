@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
         <variable
             name="itemScheduleList"
-            type="com.example.recreationmanager.ScheduleData" />
+            type="com.example.recreationmanager.schedule.ScheduleData" />
     </data>
 
     <LinearLayout
@@ -43,7 +44,8 @@
                 android:id="@+id/schedule_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="여기에 일정 제목 나옴."
+                tools:text="여기에 일정 제목 나옴."
+                android:text="@{itemScheduleList.calendarTitle}"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
 
@@ -57,7 +59,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="A"
+                    android:gravity="center"
+                    tools:text="중요도"
+                    android:text="@{itemScheduleList.priority}"
                     android:textColor="@color/white"
                     android:textSize="15sp" />
 
@@ -71,6 +75,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    tools:text="시작시간"
+                    android:text="@{itemScheduleList.startTime}"
                     android:textColor="@color/white"
                     android:textSize="15sp" />
 
@@ -89,6 +95,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    tools:text="종료시간"
+                    android:text="@{itemScheduleList.endTime}"
                     android:textColor="@color/white"
                     android:textSize="15sp" />
             </LinearLayout>

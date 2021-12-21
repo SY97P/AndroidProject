@@ -5,36 +5,29 @@
     <data>
         <variable
             name="itemGameList"
-            type="com.example.recreationmanager.GameData" />
+            type="com.example.recreationmanager.main.GameData" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/game_item"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toRightOf="@+id/recent_destination_item_line_left"
-        app:layout_constraintRight_toLeftOf="@+id/recent_destination_item_line_right"
+    <LinearLayout
+        android:id="@+id/item_game_linear"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_margin="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintDimensionRatio="H,0.99:1">
+        android:background="@drawable/round_rectangle_34"
+        android:gravity="center"
+        android:orientation="vertical">
+
         <TextView
-            android:id="@+id/gameName"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_horizontal"
-            android:maxLines="3"
-            android:ellipsize="end"
-            android:autoSizeTextType="uniform"
-            android:autoSizeMaxTextSize="16dp"
-            android:autoSizeMinTextSize="14dp"
-            android:textColor="#b4b4b4"
-            android:textStyle="normal"
-            android:textSize="15dp"
-            android:text="" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:id="@+id/item_game_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            tools:text="여기에 게임이름"
+            android:text="@{itemGameList.gameName}"
+            android:textSize="25sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
 
 </layout>

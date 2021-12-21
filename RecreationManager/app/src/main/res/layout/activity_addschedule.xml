@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/level_1"
-    tools:context=".AddScheduleActivity">
+    tools:context=".schedule.AddScheduleActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -175,6 +175,7 @@
             android:orientation="horizontal">
 
             <TextView
+                android:id="@+id/calendar_location"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1.5"
@@ -197,6 +198,7 @@
             android:orientation="horizontal">
 
             <EditText
+                android:id="@+id/calendar_note"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1.5"

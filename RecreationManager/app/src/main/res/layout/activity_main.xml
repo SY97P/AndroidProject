@@ -2,11 +2,11 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".MainActivity">
+    tools:context=".main.MainActivity">
     <data>
         <variable
             name="mainActivity"
-            type="com.example.recreationmanager.MainActivity" />
+            type="com.example.recreationmanager.main.MainActivity" />
     </data>
 
     <LinearLayout
@@ -28,11 +28,22 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/main_game_list"
             android:splitMotionEvents="false"
-            android:background="@drawable/round_rectangle_14"
+            android:background="@drawable/round_rectangle_13"
             android:layout_margin="10dp"
-            android:padding="20dp"
+            android:padding="10dp"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/main_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="싸우지말아요~"
+            android:backgroundTint="@color/level_4"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textStyle="bold"
+            android:textSize="15sp"/>
 
     </LinearLayout>
 

@@ -1,8 +1,7 @@
-package com.example.recreationmanager
+package com.example.recreationmanager.schedule
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recreationmanager.databinding.ItemScheduleListBinding
 
@@ -27,6 +26,7 @@ class ScheduleAdapter : RecyclerView.Adapter<ScheduleAdapter.ViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.binding.scheduleIndex.text = "${position+1}"
         holder.onBind(data[position])
     }
 

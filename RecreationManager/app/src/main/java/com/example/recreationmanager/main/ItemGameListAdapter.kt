@@ -1,4 +1,4 @@
-package com.example.recreationmanager
+package com.example.recreationmanager.main
 
 import android.view.LayoutInflater
 import android.view.View

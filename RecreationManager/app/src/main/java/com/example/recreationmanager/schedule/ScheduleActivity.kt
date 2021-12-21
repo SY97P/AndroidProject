@@ -1,4 +1,4 @@
-package com.example.recreationmanager
+package com.example.recreationmanager.schedule
 
 import android.content.Intent
 import android.location.Geocoder
@@ -10,10 +10,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.recreationmanager.databinding.ActivityScheduleBinding
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
 class ScheduleActivity : AppCompatActivity() {
 
@@ -23,7 +19,8 @@ class ScheduleActivity : AppCompatActivity() {
     private lateinit var mAdapter : ScheduleAdapter
     private val geocoder = Geocoder(this)
     private var scheduleList : ArrayList<ScheduleData> = arrayListOf(
-        ScheduleData("이것은 제목이다.", "시작시간", "종료시간", 1, geocoder.getFromLocationName("서울", 10)[0], "집 가고 싶다.")
+        ScheduleData("이것은 제목이다.", "시작시간", "종료시간", "B", geocoder.getFromLocationName("서울", 10)[0].toString(), "집 가고 싶다."),
+        ScheduleData("그다음 제목이다.", "AM 10:00", "PM 17:00", "A", geocoder.getFromLocationName("안양", 10)[0].toString(), "으엏")
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,17 +42,19 @@ class ScheduleActivity : AppCompatActivity() {
 
         // list inflate
         mAdapter = ScheduleAdapter()
+        // DB에서 schedule을 불러오는 작업이 필요함.
+        // 매번 DB에서 읽기를 시도해야 일정 추가후 finish()로 현 activity에 돌아올 때 리스트가 반영됨.
+        mAdapter.setData(scheduleList.toList())
         binding.scheduleList.layoutManager = LinearLayoutManager(applicationContext)
         binding.scheduleList.adapter = mAdapter
-        mAdapter.setData(scheduleList.toList())
     }
 
     override fun onStart() {
         super.onStart()
 
         binding.fab.setOnClickListener { view ->
-//            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                .setAction("Action", null).show()
+            Snackbar.make(view, "일정을 추가합니다", Snackbar.LENGTH_LONG)
+                .setAction("Action", null).show()
             val intent = Intent(this, AddScheduleActivity::class.java)
             intent.putExtra("date", intent.getStringExtra("date"))
             startActivity(intent)
