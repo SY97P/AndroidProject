@@ -9,8 +9,11 @@ import android.view.View
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.recreationmanager.MapsActivity
+import com.example.recreationmanager.GameActivity
+import com.example.recreationmanager.choicehelper.MapsActivity
 import com.example.recreationmanager.R
+import com.example.recreationmanager.RouletteActivity
+import com.example.recreationmanager.VoteActivity
 import com.example.recreationmanager.databinding.ActivityMainBinding
 import com.example.recreationmanager.notice.NoticeActivity
 import com.example.recreationmanager.schedule.ScheduleActivity
@@ -25,9 +28,10 @@ class MainActivity : AppCompatActivity() {
     private val gameList : List<GameData> = listOf(
         GameData(gameName = "지도", R.drawable.ic_game_temp),
         GameData("룰렛", R.drawable.ic_game_temp),
+        GameData("투표", R.drawable.ic_game_temp),
         GameData("마피아게임", R.drawable.ic_game_temp),
         GameData("라이어게임", R.drawable.ic_game_temp),
-        GameData("악어입게임", R.drawable.ic_game_temp),
+        GameData("악어입게임", R.drawable.ic_game_temp)
     )
 //    private val activityList : ArrayList<Intent> = arrayListOf(
 //        Intent(applicationContext, MapsActivity::class.java),
@@ -103,18 +107,34 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        //        GameData(gameName = "지도", R.drawable.ic_game_temp),
+        //        GameData("룰렛", R.drawable.ic_game_temp),
+        //        GameData("투표", R.drawable.ic_game_temp)
+        //        GameData("마피아게임", R.drawable.ic_game_temp),
+        //        GameData("라이어게임", R.drawable.ic_game_temp),
+        //        GameData("악어입게임", R.drawable.ic_game_temp),
         mAdapter.setItemClickListener(object : ItemGameListAdapter.OnItemClickListener {
             val intent = Intent(applicationContext, MapsActivity::class.java)
             override fun onClick(view: View, position: Int) {
-                if (position != 0) {
-                    // 여기를 GameActivity로 바꿔야 함.
-                    val intent = Intent(applicationContext, MapsActivity::class.java)
-                    intent.putExtra("game", gameList[position].gameName)
-                    startActivity(intent)
-                } else {
-                    val intent = Intent(applicationContext, MapsActivity::class.java)
-                    intent.putExtra("fromWhere", "main")
-                    startActivity(intent)
+                when (position) {
+                    0 -> {
+                        val intent = Intent(applicationContext, MapsActivity::class.java)
+                        intent.putExtra("fromWhere", "main")
+                        startActivity(intent)
+                    }
+                    1 -> {
+                        val intent = Intent(applicationContext, RouletteActivity::class.java)
+                        startActivity(intent)
+                    }
+                    2 -> {
+                        val intent = Intent(applicationContext, VoteActivity::class.java)
+                        startActivity(intent)
+                    }
+                    else -> {
+                        val intent = Intent(applicationContext, GameActivity::class.java)
+                        intent.putExtra("game", gameList[position].gameName)
+                        startActivity(intent)
+                    }
                 }
             }
 

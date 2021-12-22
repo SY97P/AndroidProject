@@ -1,4 +1,4 @@
-package com.example.recreationmanager
+package com.example.recreationmanager.choicehelper
 
 import android.content.Intent
 import android.location.Address
@@ -6,6 +6,7 @@ import android.location.Geocoder
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import com.example.recreationmanager.R
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap

@@ -1,14 +1,13 @@
 package com.example.recreationmanager.schedule
 
 import android.content.Intent
-import android.location.Address
 import android.os.Bundle
 import android.util.Log
 import android.view.MotionEvent
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.ui.AppBarConfiguration
-import com.example.recreationmanager.MapsActivity
+import com.example.recreationmanager.choicehelper.MapsActivity
 import com.example.recreationmanager.databinding.ActivityAddscheduleBinding
 import java.lang.Exception
 
