@@ -3,19 +3,60 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/level_1"
-    tools:context=".RouletteActivity">
+    tools:context=".roulette.RouletteActivity">
 
     <data>
         <variable
             name="rouletteActivity"
-            type="com.example.recreationmanager.RouletteActivity" />
+            type="com.example.recreationmanager.roulette.RouletteActivity" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.example.recreationmanager.Roulette
+        <LinearLayout android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      app:layout_constraintEnd_toEndOf="parent"
+                      app:layout_constraintStart_toStartOf="parent"
+                      app:layout_constraintTop_toTopOf="parent"
+                      android:layout_marginTop="10dp"
+                      android:id="@+id/roulette_result">
+
+            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                       android:id="@+id/roulette_result_image_front"
+                       android:src="@drawable/ic_roulette_result"
+                       android:visibility="gone"
+                       android:layout_marginRight="5dp"/>
+
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:id="@+id/roulette_result_text"
+                      android:text="과연 결과는?!"
+                      android:textColor="@color/level_4"
+                      android:textSize="30sp"
+                      android:textStyle="bold"
+                      android:padding="10dp"
+                      android:background="@drawable/round_rectangle_34"/>
+
+            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                       android:id="@+id/roulette_result_image_back"
+                       android:src="@drawable/ic_roulette_result"
+                       android:visibility="gone"
+                       android:layout_marginLeft="5dp"/>
+
+        </LinearLayout>
+
+        <ImageView
+                android:id="@+id/roulette_pin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_roulette_pin" app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintTop_toBottomOf="@+id/roulette_result"
+                android:layout_marginTop="12dp"/>
+        <com.example.recreationmanager.roulette.Roulette
             android:id="@+id/roulette_plate"
             android:padding="50dp"
             android:layout_width="wrap_content"
@@ -35,57 +76,58 @@
             app:layout_constraintEnd_toEndOf="parent">
 
             <com.google.android.material.button.MaterialButton
+                    android:id="@+id/roulette_button_setting"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:text="다시 만들기"/>
+
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/roulette_button_run"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="20dp"
                 android:text="돌려"/>
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/roulette_button_setting"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:text="다시 만들기"/>
 
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/roulette_floating"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintBottom_toTopOf="@+id/roulette_button"
-            app:layout_constraintEnd_toEndOf="parent">
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/roulette_floating_add"
+                android:id="@+id/roulette_floating"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom|end"
-                android:layout_margin="@dimen/fab_margin"
-                app:backgroundTint="@color/level_4"
-                app:srcCompat="@drawable/ic_add_calendar"
-                app:tint="@color/white" />
+                android:orientation="horizontal"
+                android:background="@drawable/round_rectangle_34"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/roulette_button" app:layout_constraintEnd_toEndOf="parent">
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/roulette_floating_remove"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom|end"
-                android:layout_margin="@dimen/fab_margin"
-                app:backgroundTint="@color/level_4"
-                app:srcCompat="@drawable/ic_remove_calendar"
-                app:tint="@color/white" />
+                    android:id="@+id/roulette_floating_add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|end"
+                    android:layout_margin="@dimen/fab_margin"
+                    app:backgroundTint="@color/level_4"
+                    app:srcCompat="@drawable/ic_add_calendar"
+                    app:tint="@color/white"/>
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/roulette_floating_done"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom|end"
-                android:layout_margin="@dimen/fab_margin"
-                app:backgroundTint="@color/level_4"
-                app:srcCompat="@drawable/ic_check_calendar"
-                app:tint="@color/white" />
+                    android:id="@+id/roulette_floating_remove"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|end"
+                    android:layout_margin="@dimen/fab_margin"
+                    app:backgroundTint="@color/level_4"
+                    app:srcCompat="@drawable/ic_remove_calendar"
+                    app:tint="@color/white"/>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/roulette_floating_done"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|end"
+                    android:layout_margin="@dimen/fab_margin"
+                    app:backgroundTint="@color/level_4"
+                    app:srcCompat="@drawable/ic_check_calendar"
+                    app:tint="@color/white"/>
         </LinearLayout>
 
 

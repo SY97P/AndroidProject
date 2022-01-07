@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		xmlns:tools="http://schemas.android.com/tools"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:background="@color/level_1"
+		tools:context=".AddVoteActivity">
+
+	<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:orientation="vertical"
+			android:layout_gravity="center"
+			android:layout_margin="10dp"
+			android:background="@drawable/round_rectangle_14"
+			android:padding="20dp">
+
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="30dp">
+
+			<EditText
+					android:id="@+id/addVote_title"
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					android:hint="어떤 투표인고?"
+					android:textColor="@color/level_4"
+					android:textColorHint="@color/level_4"
+					android:textSize="20sp"/>
+
+		</LinearLayout>
+
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="40dp"
+				android:orientation="horizontal">
+
+			<TextView
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:text="시작"
+					android:textColor="@color/white"/>
+
+			<View
+					android:layout_width="match_parent"
+					android:layout_height="15dp"
+					android:layout_weight="0.8"/>
+
+			<EditText
+					android:id="@+id/addVote_start_time"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:textSize="15dp"
+					android:hint="AM 11:00"
+					android:layout_weight="1"
+					android:textColorHint="@color/white"
+					android:textColor="@color/white"/>
+
+		</LinearLayout>
+
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="40dp"
+				android:orientation="horizontal">
+
+			<TextView
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:text="종료"
+					android:textColor="@color/white"/>
+
+			<View
+					android:layout_width="match_parent"
+					android:layout_height="10dp"
+					android:layout_weight="0.8"/>
+
+			<EditText
+					android:id="@+id/addVote_end_time"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:textSize="15dp"
+					android:hint="PM 12:00"
+					android:layout_weight="1"
+					android:textColorHint="@color/white"
+					android:textColor="@color/white"/>
+
+		</LinearLayout>
+
+		<View
+				android:layout_width="wrap_content"
+				android:layout_height="0.5dp"
+				android:layout_marginBottom="10dp"
+				android:background="#c2c2c2"/>
+
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="40dp"
+				android:layout_marginBottom="10dp"
+				android:orientation="horizontal">
+
+			<TextView
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_weight="1.5"
+					android:layout_gravity="center_vertical"
+					android:text="중요도"
+					android:textColor="@color/white"/>
+
+			<View
+					android:layout_width="match_parent"
+					android:layout_height="15dp"
+					android:layout_weight="1"/>
+
+			<RadioGroup
+					android:id="@+id/addVote_priority"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:orientation="horizontal">
+
+				<RadioButton
+						android:id="@+id/addVote_priority_a"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"
+						android:text="A"
+						android:textColor="@color/white"/>
+				<RadioButton
+						android:id="@+id/addVote_priority_b"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"
+						android:text="B"
+						android:textColor="@color/white"/>
+				<RadioButton
+						android:id="@+id/addVote_priority_c"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"
+						android:text="C"
+						android:textColor="@color/white"/>
+			</RadioGroup>
+
+		</LinearLayout>
+
+		<View
+				android:layout_width="wrap_content"
+				android:layout_height="0.5dp"
+				android:layout_marginBottom="20dp"
+				android:background="#c2c2c2"/>
+
+		<androidx.recyclerview.widget.RecyclerView
+				android:id="@+id/addVote_list"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:background="@drawable/round_rectangle_13"
+				android:padding="10dp"/>
+
+	</LinearLayout>
+
+	<com.google.android.material.floatingactionbutton.FloatingActionButton
+			android:id="@+id/fab_done"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="bottom|end"
+			android:layout_margin="@dimen/fab_margin"
+			app:tint="@color/white"
+			app:backgroundTint="@color/level_4"
+			app:srcCompat="@drawable/ic_check_calendar"/>
+	<com.google.android.material.floatingactionbutton.FloatingActionButton
+			android:id="@+id/fab_add"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_margin="@dimen/fab_margin"
+			android:layout_gravity="bottom"
+			android:layout_marginRight="50dp"
+			app:tint="@color/white"
+			app:backgroundTint="@color/level_4"
+			app:srcCompat="@drawable/ic_add_calendar"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

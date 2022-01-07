@@ -12,8 +12,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.recreationmanager.GameActivity
 import com.example.recreationmanager.choicehelper.MapsActivity
 import com.example.recreationmanager.R
-import com.example.recreationmanager.RouletteActivity
 import com.example.recreationmanager.VoteActivity
+import com.example.recreationmanager.roulette.RouletteActivity
 import com.example.recreationmanager.databinding.ActivityMainBinding
 import com.example.recreationmanager.notice.NoticeActivity
 import com.example.recreationmanager.schedule.ScheduleActivity
@@ -118,19 +118,23 @@ class MainActivity : AppCompatActivity() {
             override fun onClick(view: View, position: Int) {
                 when (position) {
                     0 -> {
+                        Snackbar.make(binding.root, "Google Map Service", Snackbar.LENGTH_LONG).setAction("maps", null).show()
                         val intent = Intent(applicationContext, MapsActivity::class.java)
                         intent.putExtra("fromWhere", "main")
                         startActivity(intent)
                     }
                     1 -> {
+                        Snackbar.make(binding.root, "선택장애들에게 한 줄기 희망을", Snackbar.LENGTH_LONG).setAction("roulette", null).show()
                         val intent = Intent(applicationContext, RouletteActivity::class.java)
                         startActivity(intent)
                     }
                     2 -> {
+                        Snackbar.make(binding.root, "투표 ㄱㄱ", Snackbar.LENGTH_LONG).setAction("vote", null).show()
                         val intent = Intent(applicationContext, VoteActivity::class.java)
                         startActivity(intent)
                     }
                     else -> {
+                        Snackbar.make(binding.root, "누구누구가 좋아하는 랜덤게임", Snackbar.LENGTH_LONG).setAction("game", null).show()
                         val intent = Intent(applicationContext, GameActivity::class.java)
                         intent.putExtra("game", gameList[position].gameName)
                         startActivity(intent)

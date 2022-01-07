@@ -10,11 +10,12 @@ class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
+    }
+
+    override fun onStart() {
+        super.onStart()
 
         val intent = Intent(this, MainActivity::class.java)
-
-        Thread.sleep(5000)
-
         startActivity(intent)
     }
 }
